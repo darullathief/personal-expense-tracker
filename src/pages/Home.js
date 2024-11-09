@@ -1,8 +1,10 @@
-let Home = () => {
+import Navigation from "../components/Navigation";
+
+const Home = () => {
     return (
-        <>
-        Home
-        </>
+        <div>
+            <Navigation />
+        </div>
     )
 }
 
