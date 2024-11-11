@@ -4,6 +4,6 @@ import { base_url } from "../constants/base_url";
 export const Api = axios.create({
     baseURL : base_url,
     headers: {
-        Authorization : "Bearer " + localStorage.getItem("exptra_auth");
+        Authorization : "Bearer " + localStorage.getItem("exptra_auth")
     }
 })

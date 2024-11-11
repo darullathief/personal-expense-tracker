@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { redirect, useNavigate } from "react-router-dom";
 import { login } from "../actions/auth/login";
 
 const Login = (props) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const {loggedIn} = props;
+    const navigate = useNavigate();
+    let user = localStorage.getItem("exptra_auth");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -16,6 +20,11 @@ const Login = (props) => {
         }
     };
 
+    useEffect(()=>{
+        if (loggedIn == true) {
+            navigate("/");
+        }
+    },[loggedIn])
     return (
         <div className="login-container">
             <h2>Login</h2>

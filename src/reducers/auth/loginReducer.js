@@ -2,7 +2,7 @@ import { LOGIN_ERROR, LOGIN_PENDING, LOGIN_SUCCESS } from "../../constants/actio
 
 
 const initialState = {
-    loggedIn : false,
+    loggedIn : localStorage.getItem('exptra_auth') !== null ? true : false,
 }
 
 export function isLoggedIn(state = initialState, action) {
@@ -10,7 +10,7 @@ export function isLoggedIn(state = initialState, action) {
         case LOGIN_SUCCESS:
             return {
                 ...state,
-                data: action.data
+                loggedIn : true
             };
         case LOGIN_PENDING:
             return {
