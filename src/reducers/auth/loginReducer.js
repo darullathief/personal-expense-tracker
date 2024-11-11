@@ -1,24 +1,23 @@
-import { GET_USER_ERROR, GET_USER_PENDING, GET_USER_SUCCESS } from "../../constants/action_type";
+import { LOGIN_ERROR, LOGIN_PENDING, LOGIN_SUCCESS } from "../../constants/action_type";
 
 
 const initialState = {
-    pending : false,
-    data : {}
+    loggedIn : false,
 }
 
-export function user(state = initialState, action) {
+export function isLoggedIn(state = initialState, action) {
     switch (action.type) {
-        case GET_USER_SUCCESS:
+        case LOGIN_SUCCESS:
             return {
                 ...state,
                 data: action.data
             };
-        case GET_USER_PENDING:
+        case LOGIN_PENDING:
             return {
                 ...state,
                 pending: true
             };
-        case GET_USER_ERROR:
+        case LOGIN_ERROR:
             return {
                 ...state,
                 error: action.error
@@ -28,4 +27,4 @@ export function user(state = initialState, action) {
     }
 }
 
-export default user;
+export default isLoggedIn;

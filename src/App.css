@@ -60,6 +60,7 @@
   position: absolute;
   z-index: 99;
 }
+
 .nav-link {
   margin-top: 8px;
   padding: 12px 66px 12px 16px;
@@ -68,7 +69,8 @@
   font-weight: 600;
 }
 
-.active, .pending {
+.active,
+.pending {
   color: #E6730F;
   background-color: #FAD7B7;
 }
@@ -81,6 +83,67 @@
   margin-left: 4px;
 }
 
+.login-container {
+  background-color: #fff;
+  border: 3px solid salmon;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: max-content;
+  padding: 40px;
+  margin: auto;
+  position: relative;
+  top: 150px;
+}
+
+input[type=text],
+input[type=password] {
+  appearance: none;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 8px 4px;
+  display: block;
+  border-bottom: .2em solid #E6730F;
+  background: rgba(#E6730F, .2);
+  border-radius: .2em .2em 0 0;
+  padding: .4em;
+  color: #E6730F;
+  margin-top: 16px;
+}
+
+.btn-login {
+  appearance: none;
+  display: block;
+  width: 100%;
+  margin: 16px 0;
+  border: .2em solid #E6730F;
+  background: hsl(0 0 0/0);
+  padding: .85em 1.5em;
+  color: #E6730F;
+  border-radius: 10px;
+  transition: .3s;
+  font-weight: 600;
+}
+
+.btn-login:hover,
+.btn-login:active,
+.btn-login:focus  {
+  background: #E6730F;
+  color: #fff;
+}
+
+.psw,
+.signup,
+.singin {
+  display: block;
+  margin: 20px 0;
+  font-size: 0.75em;
+  text-align: center;
+  color: #42509e;
+  cursor: pointer;
+}
 
 @keyframes App-logo-spin {
   from {

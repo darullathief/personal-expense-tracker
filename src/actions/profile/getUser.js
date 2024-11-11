@@ -1,11 +1,8 @@
 import { base_url } from "../../constants/base_url";
 import { actionError, actionPending, actionSuccess } from "../actionCreator";
 import { Api } from "../Api";
+import { GET_USER_SUCCESS, GET_USER_PENDING, GET_USER_ERROR } from "../../constants/action_type";
 
-
-export const GET_USER_SUCCESS = "GET_USER_SUCCESS";
-export const GET_USER_ERROR = "GET_USER_ERROR";
-export const GET_USER_PENDING = "GET_USER_PENDING";
 
 const get_user_url = "/user";
 
