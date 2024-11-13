@@ -6,12 +6,12 @@ import { GET_USER_SUCCESS, GET_USER_PENDING, GET_USER_ERROR } from "../../consta
 
 const get_user_url = "/user";
 
-export function getUser(param){
+export function getUser(){
     return (dispatch) => {
         dispatch(actionPending(GET_USER_SUCCESS));
-        Api.get(get_user_url, param)
+        Api.get(get_user_url)
         .then((res) => {
-            dispatch(actionSuccess(GET_USER_SUCCESS, res.data))
+            dispatch(actionSuccess(GET_USER_SUCCESS, res.data.data))
         })
         .catch((error) => {
             dispatch(actionError(GET_USER_ERROR,error))

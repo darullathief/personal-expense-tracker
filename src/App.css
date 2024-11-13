@@ -129,7 +129,7 @@ input[type=password] {
 
 .btn-login:hover,
 .btn-login:active,
-.btn-login:focus  {
+.btn-login:focus {
   background: #E6730F;
   color: #fff;
 }
@@ -143,6 +143,72 @@ input[type=password] {
   text-align: center;
   color: #42509e;
   cursor: pointer;
+}
+
+.banner {
+  background-color: #F4A259;
+  width: 100%;
+  border-radius: 0 0 50px 50px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.profile-section {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 80px;
+}
+
+.info h4, .info p {
+  margin: 0;
+  text-align: center;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+.button-group {
+  position: relative;
+  top: 180px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-outline {
+  width: 80%;
+  background-color: #fff;
+  border: 3px solid #E6730F;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4px 16px;
+  margin-top: 16px;
+}
+
+.btn-outline:hover {
+  background-color: #E6730F;
+  color: #fff;
+}
+
+.btn-outline p {
+  font-weight: 600;
+  margin-left: 4px;
+  font-size: 18px;
 }
 
 @keyframes App-logo-spin {

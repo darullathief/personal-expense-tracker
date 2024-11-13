@@ -24,7 +24,7 @@ const Login = (props) => {
         if (loggedIn == true) {
             navigate("/");
         }
-    },[loggedIn])
+    },[])
     return (
         <div className="login-container">
             <h2>Login</h2>
