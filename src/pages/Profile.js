@@ -12,13 +12,17 @@ const Profile = (props) => {
 
     useEffect(() => {
         props.getUser();
-        setName(props.data.name);
-        setEmail(props.data.email);
     }, [])
+
+    useEffect(()=>{
+        setName(props?.data?.name);
+        setEmail(props?.data?.email);
+    })
+
     return (
         <div>
             <Navigation />
-            <div className="banner"></div>
+            <div className="banner profile-banner"></div>
             <div className="profile-section">
                 <img src={profileIcon} className="profile-pic" />
                 <div className="info">
@@ -29,8 +33,8 @@ const Profile = (props) => {
 
             <div className="button-group">
                 <LeadingIconOutlinedButton
-                    name = "Edit Profile"
-                    icon = {faPencil}
+                    name="Edit Profile"
+                    icon={faPencil}
                 />
                 <LeadingIconOutlinedButton
                     name="Keluar"

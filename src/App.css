@@ -30,6 +30,7 @@
 
 .nav-container {
   height: 100vh;
+  z-index: 999;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -168,7 +169,8 @@ input[type=password] {
   top: 80px;
 }
 
-.info h4, .info p {
+.info h4,
+.info p {
   margin: 0;
   text-align: center;
 }
@@ -179,6 +181,7 @@ input[type=password] {
   border-radius: 50%;
   margin-bottom: 16px;
 }
+
 .button-group {
   position: relative;
   top: 180px;
@@ -209,6 +212,33 @@ input[type=password] {
   font-weight: 600;
   margin-left: 4px;
   font-size: 18px;
+}
+
+@media (min-width: 768px) {
+  .profile-banner {
+    background-color: #F4A259;
+    width: 28%;
+    border-radius: 50px 0px 0px 50px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: unset;
+    z-index: 1;
+  }
+
+  .profile-section {
+    right: 0;
+    width: 28%;
+    height: 100%;
+    left: unset;
+    float: right;
+  }
+
+  .button-group {
+    width: 70%;
+    margin-left: auto;
+  }
 }
 
 @keyframes App-logo-spin {
