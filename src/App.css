@@ -154,7 +154,7 @@ input[type=password] {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: -1;
 }
 
 .profile-section {
@@ -214,6 +214,35 @@ input[type=password] {
   font-size: 18px;
 }
 
+.overview-container {
+  width: 100vw;
+  position: relative;
+  padding: 44px 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.month-wrapper {
+  width: 100%;
+  margin: auto;
+  display: inherit;
+  justify-content: center;
+}
+.month-picker {
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #E6730F;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+}
+
 @media (min-width: 768px) {
   .profile-banner {
     background-color: #F4A259;
@@ -239,6 +268,7 @@ input[type=password] {
     width: 70%;
     margin-left: auto;
   }
+
 }
 
 @keyframes App-logo-spin {
