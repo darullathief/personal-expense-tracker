@@ -4,15 +4,15 @@ import { Api } from "../Api"
 
 const get_budget_url = "/budgets/get_month_calculation";
 
-export function getBudget(param) {
+export function getBudget(params) {
     return (dispatch) => {
         dispatch(actionPending(GET_BUDGET_PENDING))
-        Api.get(get_budget_url, param)
+        Api.get(get_budget_url, {params : params})
             .then((res) => {
-                actionPending(actionSuccess(GET_BUDGET_SUCCESS, res.data.data))
+                dispatch(actionSuccess(GET_BUDGET_SUCCESS, res.data.data))
             })
             .catch((error) => {
-                actionPending(actionError(GET_BUDGET_ERROR, error))
+                dispatch(actionError(GET_BUDGET_ERROR, error))
             })
     }
 }

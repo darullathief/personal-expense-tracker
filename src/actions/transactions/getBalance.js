@@ -4,15 +4,15 @@ import { Api } from "../Api"
 
 const get_balance_url = "/transaction/balance";
 
-export function getBalance(param) {
+export function getBalance(params) {
     return (dispatch) => {
         dispatch(actionPending(GET_BALANCE_PENDING))
-        Api.get(get_balance_url, param)
+        Api.get(get_balance_url, {params : params})
             .then((res) => {
-                actionPending(actionSuccess(GET_BALANCE_SUCCESS, res.data.data))
+                dispatch(actionSuccess(GET_BALANCE_SUCCESS, res.data.data))
             })
             .catch((error) => {
-                actionPending(actionError(GET_BALANCE_ERROR, error))
+                dispatch(actionError(GET_BALANCE_ERROR, error))
             })
     }
 }

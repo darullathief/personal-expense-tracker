@@ -3,7 +3,7 @@ import { GET_TOTAL_EXPENSE_ERROR, GET_TOTAL_EXPENSE_PENDING, GET_TOTAL_EXPENSE_S
 
 const initialState = {
     pending : false,
-    data : {}
+    data : 0
 }
 
 export function getTotalExpenseReducer(state = initialState, action) {
@@ -11,6 +11,7 @@ export function getTotalExpenseReducer(state = initialState, action) {
         case GET_TOTAL_EXPENSE_SUCCESS:
             return {
                 ...state,
+                pending: false,
                 data: action.data
             };
         case GET_TOTAL_EXPENSE_PENDING:
@@ -21,6 +22,7 @@ export function getTotalExpenseReducer(state = initialState, action) {
         case GET_TOTAL_EXPENSE_ERROR:
             return {
                 ...state,
+                pending: false,
                 error: action.error
             };
         default:

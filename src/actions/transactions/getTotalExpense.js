@@ -2,17 +2,17 @@ import { GET_TOTAL_EXPENSE_ERROR, GET_TOTAL_EXPENSE_PENDING, GET_TOTAL_EXPENSE_S
 import { actionError, actionPending, actionSuccess } from "../actionCreator";
 import { Api } from "../Api"
 
-const get_total_expense_url = "/transaction/get";
+const get_total_expense_url = "/transaction/get_calculation";
 
-export function getTotalExpense(param) {
+export function getTotalExpense(params) {
     return (dispatch) => {
         dispatch(actionPending(GET_TOTAL_EXPENSE_PENDING))
-        Api.get(get_total_expense_url, param)
+        Api.get(get_total_expense_url, {params : params})
             .then((res) => {
-                actionPending(actionSuccess(GET_TOTAL_EXPENSE_SUCCESS, res.data.data))
+                dispatch(actionSuccess(GET_TOTAL_EXPENSE_SUCCESS, res.data.data.total))
             })
             .catch((error) => {
-                actionPending(actionError(GET_TOTAL_EXPENSE_ERROR, error))
+                dispatch(actionError(GET_TOTAL_EXPENSE_ERROR, error))
             })
     }
 }
