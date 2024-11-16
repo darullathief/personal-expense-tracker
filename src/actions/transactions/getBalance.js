@@ -2,7 +2,7 @@ import { GET_BALANCE_ERROR, GET_BALANCE_PENDING, GET_BALANCE_SUCCESS } from "../
 import { actionError, actionPending, actionSuccess } from "../actionCreator";
 import { Api } from "../Api"
 
-const get_balance_url = "/BALANCEs/get_month_calculation";
+const get_balance_url = "/transaction/balance";
 
 export function getBalance(param) {
     return (dispatch) => {
